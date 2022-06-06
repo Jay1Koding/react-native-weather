@@ -29,3 +29,21 @@
   - 대부분의 필요 기능들은 구현해놓음
 
 [Expo SDK](https://docs.expo.dev/versions/latest/)
+
+### RN Layout with Flexbox!
+
+- View는 Flex Container
+- flex의 비율은 마치 grid의 fr 같은 개념
+- 부모 View에 지정 해주지 않음 비율을 맞출 수 없음
+
+```javascript
+export default function App() {
+  return (
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: 'tomato' }}></View>
+      <View style={{ flex: 5, backgroundColor: 'teal' }}></View>
+      <View style={{ flex: 1, backgroundColor: 'orange' }}></View>
+    </View>
+  );
+}
+```
