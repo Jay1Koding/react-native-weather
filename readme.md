@@ -47,3 +47,11 @@ export default function App() {
   );
 }
 ```
+
+### Style
+
+- ScrollView를 쓸 때 style을 만들고 싶으면 contentContainerStyle를 사용해야함
+- ScrollView에서는 flex를 줄 필요가 없음 // 스크린보다 커야하기 때문
+
+[ScrollView](https://reactnative.dev/docs/scrollview)
+[dimension](https://reactnative.dev/docs/dimensions)

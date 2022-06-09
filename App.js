@@ -1,6 +1,10 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+console.log(SCREEN_WIDTH);
 
 export default function App() {
   return (
@@ -8,12 +12,29 @@ export default function App() {
       <View style={styles.city}>
         <Text style={styles.cityName}>Seoul</Text>
       </View>
-      <View style={styles.weather}>
+      <ScrollView
+        pagingEnabled
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.weather}
+      >
         <View style={styles.day}>
           <Text style={styles.temp}>27</Text>
           <Text style={styles.description}>Sunny</Text>
         </View>
-      </View>
+        <View style={styles.day}>
+          <Text style={styles.temp}>27</Text>
+          <Text style={styles.description}>Sunny</Text>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.temp}>27</Text>
+          <Text style={styles.description}>Sunny</Text>
+        </View>
+        <View style={styles.day}>
+          <Text style={styles.temp}>27</Text>
+          <Text style={styles.description}>Sunny</Text>
+        </View>
+      </ScrollView>
       <StatusBar style='auto' />
     </View>
   );
@@ -34,10 +55,12 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   weather: {
-    flex: 3,
+    // flex: 3,
+    backgroundColor: 'blue',
   },
   day: {
-    flex: 1,
+    // flex: 1,
+    width: SCREEN_WIDTH,
     alignItems: 'center',
   },
   temp: {
